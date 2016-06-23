@@ -7,14 +7,7 @@ Generate a unit test for your Sails app.
 this a fork by [sails-generate-test](https://github.com/sailsjs/sails-generate-test)
 
 ## Config/env
-you can customize the connection to your preference. **[config/env/test](./templates/config/env/test)**
-
-```json
-models: {
-    connection: 'localDiskDb',  <== specify the connection for testing.
-    migrate: 'drop'             <== specify the kind for testing connection.
-}
-```
+you can customize the connection to your preference. **[config/env/test](./templates/config/env/test.js)**
 
 ## Necessary module packages
 ```

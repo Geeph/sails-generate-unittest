@@ -1,0 +1,47 @@
+<%/**
+ * Boilerplate model
+ *
+ 
+ * This is the template used when generating models via the CLI
+ * e.g. `sails generate model foo`
+ *
+ */
+%>
+/**
+ * <%= filename %>
+ *
+ * @description :: TODO: You might write a short summary of how this model works and what it represents here.
+ * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
+ */
+"use strict";
+
+var chai = require('chai');
+var assert = chai.assert;
+
+describe('Model:<%= globalID %>', () => { 
+
+	describe('create()', () => {
+		it('should create a record', done => {
+			done();
+		});
+	});
+
+	describe('update()', () => {
+		it('should update a record', done => {
+			done();
+		});
+	});
+
+	describe('destroy()', () => {
+		it('should destroy a record', done => {
+			done();
+		});
+	});
+
+	describe('find()', () =>{
+		it('should return a record', done => {
+			done();
+		});
+	});
+});
+

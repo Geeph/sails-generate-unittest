@@ -1,17 +1,17 @@
 <%/**
- * Boilerplate model
+ * Boilerplate test model
  *
  
- * This is the template used when generating models via the CLI
- * e.g. `sails generate model foo`
+ * This is the template used when generating test via the CLI
+ * e.g. `sails generate test foo`
  *
  */
 %>
-/**
- * <%= filename %>
- *
+/** 
+ * Test model: <%= filename %>
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
- * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
+ * @sails docs  :: http://sailsjs.org/documentation/concepts/testing - 
+ * @chai docs	:: http://chaijs.com/guide/styles/
  */
 "use strict";
 

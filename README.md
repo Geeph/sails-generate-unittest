@@ -73,11 +73,13 @@ sails generate test User
 ## The end result will be the generation of the following structure test
 
     test                        - Root directory for test
-    ├── blueprint               - Test directory for Blueprint
-    ├── controller              - Test directory for controllers
-    ├── models                  - For Models
-    ├── polices                 - For Polices
-    ├── services                - For Services
+    ├── fixtures 
+    ├── integration
+    │   ├── blueprint           - Test directory for Blueprint
+    │   ├── controller          - Test directory for controllers
+    │   ├── models              - For Models
+    │   ├── polices             - For Polices
+    │   └── services            - For Services
     ├── README.md               - README file
     ├── bootstrap.test.js       - Load sails to test
     └── moncha.opts             - Mocha configurations

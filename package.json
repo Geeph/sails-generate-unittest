@@ -1,6 +1,6 @@
 {
     "name": "sails-generate-unittest",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Generate a unit test for your Sails app. ",
     "author": "cpmproto <dewin.martinez@gmail.com>",
     "main": "lib/index.js",
@@ -15,8 +15,8 @@
     "keywords": ["test", "generator", "sails", "generate", "plugin", "unit"],
     "license": "MIT",
     "dependencies": {
-        "lodash": ">=2.4.x",
-        "merge-defaults": ">=0.1.0"
+        "lodash": "3.10.1",
+        "merge-defaults": "0.2.1"
     },
     "devDependencies": {
         "sails-generate": "*",

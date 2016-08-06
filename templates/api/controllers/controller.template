@@ -8,7 +8,7 @@
  */
 %>
 /** 
- * Test model: <%= filename %>
+ * Test model: <%= modelFilename %>
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @sails docs  :: http://sailsjs.org/documentation/concepts/testing - 
  * @chai docs	:: http://chaijs.com/guide/styles/
@@ -29,7 +29,7 @@ var data = {};
 describe('Controller:<%= globalID %>', () => { 
 
 	describe('POST /<%= globalID %>', () => {
-        it('Should created new <%= globalID %>', done => {                
+        it('Should created new <%= globalID %>', done => {
             request(sails.hooks.http.app)
             .post(sails.config.blueprints.prefix + '/<%= globalID %>')
             .send(data)
@@ -40,24 +40,25 @@ describe('Controller:<%= globalID %>', () => {
                     return done(err);
                 }
                 //TODO: validate the response expected
-                //expect(res.body.data).to.equal(data);                     
+                expect(res.body.code).to.equal('CREATED');
                 done();
-            });               
+            });
         });
     });
 
 	describe('GET /<%= globalID %>', () => {
         it('Should getted <%= globalID %>', done => {
             request(sails.hooks.http.app)
-            .get(sails.config.blueprints.prefix + '/<%= globalID %>')            
+            .get(sails.config.blueprints.prefix + '/<%= globalID %>')
             .expect(200)
             .expect('Content-Type', /json/)
             .end((err, res) => {
-            	if (err) {
+            	if (err)
                     return done(err);
-                }    
+                
                 //TODO: validate the response expected
-                //expect(res.body.data[0]).to.equal(data);
+                expect(res.body.code).to.equal('OK');
+                data = res.body.data[0];
                 done();
             });
         });
@@ -69,27 +70,33 @@ describe('Controller:<%= globalID %>', () => {
 	describe('GET /<%= globalID %>/:id', () => {
         it('should respond with the requested <%= globalID %>:id', done => {
             request(sails.hooks.http.app)
-            .get(sails.config.blueprints.prefix + '/<%= globalID %>/' + id)            
+            .get(sails.config.blueprints.prefix + '/<%= globalID %>/' + data.id)
             .expect(200)
             .expect('Content-Type', /json/)
-            .end((err, res) => {               
+            .end((err, res) => {
+                if (err)
+                    return done(err);
+
                 //TODO: validate the response expected
-                //expect(res.body.data[0]).to.equal(data);
+                expect(res.body.code).to.equal('OK');
                 done();
             });
         });
     });
 
     describe('PUT /<%= globalID %>/:id', () => {
-    	it('should respond updated <%= globalID %>', done => {            
+    	it('should respond updated <%= globalID %>', done => {
             request(sails.hooks.http.app)
-            .put(sails.config.blueprints.prefix + '/<%= globalID %>/' + id)
+            .put(sails.config.blueprints.prefix + '/<%= globalID %>/' + data.id)
             .send(data)            
             .expect(200)
             .expect('Content-Type', /json/)
             .end((err, res) => {
+                if (err)
+                    return done(err);
+
             	//TODO: validate the response expected
-                //expect(res.body.id).to.equal(data.id);
+                expect(res.body.code).to.equal('OK');
                 done();
             });
         });
@@ -98,12 +105,21 @@ describe('Controller:<%= globalID %>', () => {
     describe('DELETE /<%= globalID %>/:id', () => {
     	it('should respond with 204 on successful removal', done => {
             request(sails.hooks.http.app)
-            .delete(sails.config.blueprints.prefix + '/<%= globalID %>/' + id)            
+            .delete(sails.config.blueprints.prefix + '/<%= globalID %>/' + data.id)
             .expect(204)            
-            .end((err, res) => {               
+            .end((err, res) => {
+                if (err)
+                    return done(err);
+
+                expect(res.statusCode).to.equal(204);
                 done();
             });
         });
+    });
+
+    //Clear <%= globalID %> after testing
+     after(function() {
+        return <%= globalID %>.destroy();
     });
 });
 

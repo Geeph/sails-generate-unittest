@@ -8,7 +8,7 @@
  */
 %>
 /** 
- * Test model: <%= filename %>
+ * Test model: <%= controllerFilename %>
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @sails docs  :: http://sailsjs.org/documentation/concepts/testing - 
  * @chai docs	:: http://chaijs.com/guide/styles/

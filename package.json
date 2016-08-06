@@ -1,6 +1,6 @@
 {
     "name": "sails-generate-unittest",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Generate a unit test for your Sails app. ",
     "author": "cpmproto <dewin.martinez@gmail.com>",
     "main": "lib/index.js",
